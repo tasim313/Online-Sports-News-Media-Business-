@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SportsScope — Online Sports News & Media Business Model</title>
+<meta name="description" content="Complete interactive business model, financial planning and management system for an Online Sports News & Media Company (Bangladesh & South Asia focus)." />
+<link rel="stylesheet" href="assets/css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div class="name">SportsScope</div>
+        <div class="sub">Business Model OS</div>
+      </div>
+    </div>
+    <nav class="nav-scroll" id="nav">
+      <div class="nav-group-title">Strategy</div>
+      <div class="nav-item active" data-target="dashboard"><span class="ni-ico">📊</span><span class="ni-label">Executive Dashboard</span></div>
+      <div class="nav-item" data-target="business-overview"><span class="ni-ico">🧭</span><span class="ni-label">Business Overview</span></div>
+      <div class="nav-item" data-target="market-research"><span class="ni-ico">🔎</span><span class="ni-label">Market Research</span></div>
+      <div class="nav-item" data-target="business-models"><span class="ni-ico">🧩</span><span class="ni-label">Business Models</span></div>
+      <div class="nav-item" data-target="revenue-opportunities"><span class="ni-ico">💰</span><span class="ni-label">Revenue Opportunities</span></div>
+
+      <div class="nav-group-title">Financials</div>
+      <div class="nav-item" data-target="startup-investment"><span class="ni-ico">🚀</span><span class="ni-label">Startup Investment</span></div>
+      <div class="nav-item" data-target="financial-planning"><span class="ni-ico">🧮</span><span class="ni-label">Financial Planning</span></div>
+      <div class="nav-item" data-target="revenue-forecast"><span class="ni-ico">📈</span><span class="ni-label">Revenue Forecast</span></div>
+      <div class="nav-item" data-target="profit-loss"><span class="ni-ico">📉</span><span class="ni-label">Profit &amp; Loss</span></div>
+      <div class="nav-item" data-target="break-even"><span class="ni-ico">⚖️</span><span class="ni-label">Break-Even Analysis</span></div>
+      <div class="nav-item" data-target="roi"><span class="ni-ico">🎯</span><span class="ni-label">ROI Analysis</span></div>
+
+      <div class="nav-group-title">Ownership &amp; Funding</div>
+      <div class="nav-item" data-target="founder-ownership"><span class="ni-ico">👥</span><span class="ni-label">Founder &amp; Ownership</span></div>
+      <div class="nav-item" data-target="investor-management"><span class="ni-ico">🤝</span><span class="ni-label">Investor Management</span></div>
+      <div class="nav-item" data-target="funding-strategy"><span class="ni-ico">🏦</span><span class="ni-label">Funding Strategy</span></div>
+
+      <div class="nav-group-title">Operations</div>
+      <div class="nav-item" data-target="operational-workflow"><span class="ni-ico">🔁</span><span class="ni-label">Operational Workflow</span></div>
+      <div class="nav-item" data-target="business-architecture"><span class="ni-ico">🏗️</span><span class="ni-label">Business Architecture</span></div>
+      <div class="nav-item" data-target="policies-compliance"><span class="ni-ico">📜</span><span class="ni-label">Policies &amp; Compliance</span></div>
+      <div class="nav-item" data-target="kpi-monitoring"><span class="ni-ico">📡</span><span class="ni-label">KPI Monitoring</span></div>
+      <div class="nav-item" data-target="risk-management"><span class="ni-ico">🛡️</span><span class="ni-label">Risk Management</span></div>
+
+      <div class="nav-group-title">Lifecycle &amp; Exit</div>
+      <div class="nav-item" data-target="business-lifecycle"><span class="ni-ico">🔄</span><span class="ni-label">Business Lifecycle</span></div>
+      <div class="nav-item" data-target="expansion-strategy"><span class="ni-ico">🌏</span><span class="ni-label">Expansion Strategy</span></div>
+      <div class="nav-item" data-target="company-valuation"><span class="ni-ico">💎</span><span class="ni-label">Company Valuation</span></div>
+      <div class="nav-item" data-target="exit-strategy"><span class="ni-ico">🚪</span><span class="ni-label">Exit Strategy</span></div>
+      <div class="nav-item" data-target="implementation-roadmap"><span class="ni-ico">🗺️</span><span class="ni-label">Implementation Roadmap</span></div>
+    </nav>
+    <div class="sidebar-foot">
+      Illustrative planning data · v1.0<br/>Not legal or financial advice.
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="hamburger" aria-label="Menu">☰</button>
+      <div class="page-title" id="pageTitle">Executive Dashboard</div>
+      <div class="spacer"></div>
+      <div class="controls">
+        <select id="scenarioSelect" title="Scenario">
+          <option value="conservative">Conservative</option>
+          <option value="realistic">Realistic</option>
+          <option value="optimistic">Optimistic</option>
+        </select>
+        <select id="currencySelect" title="Currency">
+          <option value="BDT">BDT ৳</option>
+          <option value="USD">USD $</option>
+        </select>
+        <button class="btn sm" id="themeToggle" title="Toggle theme">🌗</button>
+        <button class="btn sm" data-action="export" title="Export financial summary">⬇ Export</button>
+        <button class="btn sm" data-action="print" title="Print">🖨 Print</button>
+      </div>
+    </header>
+
+    <main class="content" id="content">
+
+      <!-- ===================== 1. DASHBOARD ===================== -->
+      <section class="section active" id="sec-dashboard">
+        <div class="section-head">
+          <div class="eyebrow">Executive Dashboard</div>
+          <h2>Business Model at a Glance</h2>
+          <p>Live, editable projections for a digital sports media company (Bangladesh &amp; South Asia focus). Every figure below is a <span class="tag-assume">planning assumption</span> you can change — nothing is a guarantee. Replace illustrative inputs with real business data before making decisions.</p>
+        </div>
+
+        <div class="notice warn"><span class="n-ico">⚠️</span><div><strong>Illustrative data.</strong> All numbers are editable assumptions for planning, not actual performance or promised earnings. Default currency is BDT (৳) with a secondary USD view. <span class="tag-assume">Assumptions</span> = editable inputs; <span class="tag-est">Estimates</span> = derived; <span class="tag-fact">Facts</span> = cited public info; <span class="tag-rec">Recommendations</span> = advice.</div></div>
+
+        <div class="grid c4 mt16">
+          <div class="kpi brand"><div class="k-label">Monthly Revenue (M12)</div><div class="k-value" id="dashRev">—</div><div class="k-sub">at current scenario &amp; traffic</div></div>
+          <div class="kpi good"><div class="k-label">Monthly EBITDA</div><div class="k-value" id="dashEbitda">—</div><div class="k-sub">revenue − operating cost</div></div>
+          <div class="kpi"><div class="k-label">Net Profit / mo</div><div class="k-value" id="dashNet">—</div><div class="k-sub">after dep. &amp; tax</div></div>
+          <div class="kpi warn"><div class="k-label">Startup Capital</div><div class="k-value" id="dashStartup">—</div><div class="k-sub">total to launch</div></div>
+        </div>
+        <div class="grid c4 mt16">
+          <div class="kpi"><div class="k-label">Monthly Pageviews</div><div class="k-value" id="dashPV">—</div><div class="k-sub">traffic assumption</div></div>
+          <div class="kpi"><div class="k-label">Break-Even Revenue</div><div class="k-value" id="dashBE">—</div><div class="k-sub">per month</div></div>
+          <div class="kpi good"><div class="k-label">Break-Even Progress</div><div class="k-value" id="dashBEPct">—</div><div class="progress mt8"><span id="dashBEBar" style="width:0%"></span></div></div>
+          <div class="kpi"><div class="k-label">Cash Runway</div><div class="k-value" id="dashRunway">—</div><div class="k-sub">at current burn</div></div>
+        </div>
+
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Revenue Mix (Month 12)</h3><div class="chart-box"><canvas id="chartRevenue"></canvas></div></div>
+          <div class="card">
+            <h3>Key Levers (edit in Financial Planning)</h3>
+            <div class="form-grid">
+              <div class="field"><label>Monthly Pageviews (M12)</label><input type="number" data-bind="pvMonth12" step="1000" /></div>
+              <div class="field"><label>AdSense Page RPM (USD)</label><input type="number" data-bind="adsensePageRPM" step="0.05" /></div>
+              <div class="field"><label>USD → BDT Rate</label><input type="number" id="usdRate" step="1" /></div>
+              <div class="field"><label>Cash Balance (USD)</label><input type="number" data-bind="cashBalance" step="500" /></div>
+            </div>
+            <div class="notice info mt16"><span class="n-ico">💡</span><div>Start with <strong>Financial Planning</strong> to edit all assumptions, then watch every chart and KPI recalculate instantly. Changes are saved in your browser (localStorage).</div></div>
+            <div class="row mt16">
+              <button class="btn primary" data-action="export">⬇ Export Summary</button>
+              <button class="btn" data-action="reset">↺ Reset Defaults</button>
+              <button class="btn ghost" data-action="export-json">{ } Export JSON</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 2. BUSINESS OVERVIEW ===================== -->
+      <section class="section" id="sec-business-overview">
+        <div class="section-head"><div class="eyebrow">Business Overview</div><h2>What We Are Building</h2><p>A digital sports media company producing news, journalism, analysis, video, live coverage, podcasts, newsletters and community across 15+ sports, with a Bangladesh &amp; South Asia core and international reach.</p></div>
+
+        <div class="grid c3">
+          <div class="card"><h3>🎯 Mission</h3><p class="muted">Deliver fast, verified, independent sports journalism and analysis that South Asian and global fans trust — monetised responsibly across advertising, sponsorship, memberships and (legally licensed) streaming.</p></div>
+          <div class="card"><h3>👁️ Vision</h3><p class="muted">Become the most credible independent sports news &amp; data brand for Bangladesh and the wider South Asian region, expanding into video and live products.</p></div>
+          <div class="card"><h3>⚖️ Values</h3><p class="muted">Editorial independence · Accuracy &amp; verification · Legal &amp; copyright compliance · Transparency with audience and sponsors · Sustainable, diversified revenue.</p></div>
+        </div>
+
+        <div class="card mt16"><h3>Sports Coverage</h3>
+          <div class="row">
+            <span class="pill">Football</span><span class="pill">Cricket</span><span class="pill">Basketball</span><span class="pill">Tennis</span><span class="pill">Badminton</span><span class="pill">Volleyball</span><span class="pill">Hockey</span><span class="pill">Athletics</span><span class="pill">Swimming</span><span class="pill">Boxing</span><span class="pill">Wrestling</span><span class="pill">Esports</span><span class="pill">Olympic Sports</span><span class="pill">Int'l Tournaments</span><span class="pill">Local &amp; Regional</span>
+          </div>
+          <p class="muted mt12">Content formats: news portal · journalism &amp; blogging · live coverage · analysis &amp; opinion · match previews/reviews · stats &amp; data · live scores · interviews · documentaries · video · live streaming · podcasts · social publishing · newsletters · community · event coverage.</p>
+        </div>
+
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Startup Planning Flow</h3><div id="flows-business-overview"></div></div>
+          <div class="card">
+            <h3>Revenue Logic (summary)</h3>
+            <ul class="clean">
+              <li><span>Advertising (AdSense first)</span><span class="badge blue">Primary</span></li>
+              <li><span>Direct advertising</span><span class="badge blue">Early</span></li>
+              <li><span>Sponsorship packages</span><span class="badge purple">Growth</span></li>
+              <li><span>Memberships &amp; newsletters</span><span class="badge gold">Mid</span></li>
+              <li><span>Streaming (licensed only)</span><span class="badge green">Expansion</span></li>
+              <li><span>Commerce, data, B2B</span><span class="badge gray">Long-term</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 3. MARKET RESEARCH ===================== -->
+      <section class="section" id="sec-market-research">
+        <div class="section-head"><div class="eyebrow">Market Research</div><h2>Competitors &amp; Market Context</h2><p>Public facts are distinguished from estimates. Private financials of competitors are <strong>not</strong> treated as verified. Research date: <span class="tag-fact">Nov 2026</span>. Verify all figures before use.</p></div>
+
+        <div class="notice info"><span class="n-ico">ℹ️</span><div><span class="tag-fact">Fact</span> = publicly reported / observable. <span class="tag-est">Estimate</span> = analyst inference. <span class="tag-assume">Assumption</span> = our planning input. We never invent private revenue figures.</div></div>
+
+        <div class="table-wrap mt16"><table>
+          <thead><tr><th>Player</th><th>Business Model <span class="xsmall">(public/observable)</span></th><th>Revenue Sources</th><th>Subscription?</th><th>Streaming?</th><th>What a small player learns</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ESPN</strong></td><td>Global sports network + digital + streaming (ESPN+)</td><td>TV affiliate fees, ads, subscriptions, licensing</td><td>Yes (ESPN+)</td><td>Yes</td><td>Multi-channel bundling; brand trust</td></tr>
+            <tr><td><strong>Sky Sports</strong></td><td>Pay-TV sports broadcaster</td><td>Subscriptions, ads, rights</td><td>Yes</td><td>Yes</td><td>Premium rights moat (capital-heavy)</td></tr>
+            <tr><td><strong>BBC Sport</strong></td><td>Public-service broadcaster (license fee)</td><td>License fee, limited ads</td><td>No</td><td>Yes (iPlayer)</td><td>Trust &amp; neutrality as differentiator</td></tr>
+            <tr><td><strong>The Athletic</strong></td><td>Subscription-first journalism</td><td>Digital subscriptions</td><td>Yes</td><td>Limited</td><td>Quality/exclusivity can beat ads</td></tr>
+            <tr><td><strong>Goal.com</strong></td><td>Free global football media</td><td>Advertising, brand partnerships</td><td>No</td><td>Some</td><td>SEO + social scale; ad-funded</td></tr>
+            <tr><td><strong>Cricbuzz</strong></td><td>Free cricket news/scores (India)</td><td>Advertising, sponsorships</td><td>Limited</td><td>No (rights)</td><td>Regional niche dominance via scores</td></tr>
+            <tr><td><strong>ESPNcricinfo</strong></td><td>Cricket news/data/stats</td><td>Ads, data, subscriptions</td><td>Some</td><td>No</td><td>Data &amp; stats as a moat</td></tr>
+            <tr><td><strong>OneFootball</strong></td><td>Football app/media</td><td>Ads, content, commerce</td><td>Limited</td><td>Some</td><td>Mobile-first community</td></tr>
+            <tr><td><strong>Yahoo Sports</strong></td><td>Portal + aggregation</td><td>Advertising, data, fantasy</td><td>Limited</td><td>Some</td><td>Aggregation + fantasy engagement</td></tr>
+          </tbody>
+        </tbody></table></div>
+
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Bangladesh &amp; South Asia Context <span class="badge gold">Estimate</span></h3>
+            <ul class="muted small">
+              <li>Cricket + football dominate attention; football (Bangladesh Premier League-era interest, EPL/La Liga following) and cricket (BPL, internationals) are anchors.</li>
+              <li>Mobile-first, price-sensitive audience → ad-supported (AdSense) fits better than hard paywalls early.</li>
+              <li>Rising digital ad spend and creator economy; local sponsors (telecom, beverage, sportswear, banks) are reachable.</li>
+              <li>Broadcasting rights are expensive/licensed — never restream without rights.</li>
+              <li>RMB (revenue per mille) is geo-sensitive: South Asian traffic typically lower RPM than US/EU; mix matters.</li>
+            </ul>
+          </div>
+          <div class="card"><h3>Realistic Takeaways for a Small Independent</h3>
+            <ul class="muted small">
+              <li>Win a <strong>niche</strong> (e.g., Bangladesh football + local cricket) before going broad.</li>
+              <li>Use <strong>SEO + Google Discover + social</strong> for low-cost reach.</li>
+              <li>AdSense first, then layer direct ads &amp; sponsorships.</li>
+              <li>Differentiate on <strong>verification &amp; independence</strong>, not volume.</li>
+              <li>Build owned audience (newsletter/community) to reduce platform dependency.</li>
+              <li>Only pursue streaming with <strong>licensed</strong> or owned content.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted small mt12">Source references &amp; research log: see <span class="mono">SOURCES_AND_RESEARCH.md</span>. Figures are illustrative/observable, not audited.</p>
+      </section>
+
+      <!-- ===================== 4. BUSINESS MODELS ===================== -->
+      <section class="section" id="sec-business-models">
+        <div class="section-head"><div class="eyebrow">Business Models</div><h2>Complete Revenue Model Breakdown</h2><p>Each model explains how it works, how the company earns, infrastructure, investment, OpEx, revenue math, margin, scalability, pros/cons, risks, partnerships, difficulty and time-to-revenue.</p></div>
+
+        <div class="tabs" data-group="models">
+          <div class="tab active" data-tab="ads">A. AdSense</div>
+          <div class="tab" data-tab="direct">B. Direct Ads</div>
+          <div class="tab" data-tab="spon">C. Sponsorship</div>
+          <div class="tab" data-tab="blog">D. Journalism</div>
+          <div class="tab" data-tab="stream">E. Streaming</div>
+          <div class="tab" data-tab="add">F. Additional</div>
+        </div>
+
+        <!-- A -->
+        <div class="tab-panel active" data-tabgroup="models" data-tab="ads">
+          <div class="card">
+            <h3>A. Google AdSense Display Advertising <span class="badge blue">Primary (initial)</span></h3>
+            <p class="muted">How it works: display ad units (in-article, multiplex, auto ads) serve across desktop &amp; mobile; video ad eligibility requires video content &amp; approval. The company earns on a <strong>per-impression / per-click</strong> basis mediated by Google. Revenue ≈ <span class="mono">Pageviews ÷ 1000 × Page RPM</span>. Not every visit yields an impression and not all pageviews monetise equally (geography, device, season, ad blindness).</p>
+            <div class="grid c3 mt12">
+              <div class="card pad-lg small"><strong>Infrastructure:</strong> CMS, ad slots, consent/CMP, analytics.<br/><strong>Initial inv.:</strong> low (mostly dev time).<br/><strong>Monthly OpEx:</strong> hosting/CDN.<br/><strong>Difficulty:</strong> low–medium (approval + policy).</div>
+              <div class="card pad-lg small"><strong>Revenue calc:</strong> PV/1000 × PageRPM; PageRPM = f(geo, CTR, CPC, fill).<br/><strong>Margin:</strong> high (90%+ gross).<br/><strong>Scalability:</strong> high (traffic-bound).<br/><strong>Time to rev.:</strong> 3–6 mo after approval.</div>
+              <div class="card pad-lg small"><strong>Pros:</strong> easy start, passive.<br/><strong>Cons:</strong> low RPM in region, volatile.<br/><strong>Risks:</strong> invalid traffic, policy bans.<br/><strong>Partnerships:</strong> Google only.</div>
+            </div>
+            <div class="notice danger mt12"><span class="n-ico">⛔</span><div><strong>Policy &amp; compliance:</strong> AdSense prohibits invalid traffic, prohibited content, deceptive placements, and certain content categories. Account suspension risk is real. Maintain a compliance policy, monitor for invalid traffic, and never buy bot traffic. See <span class="mono">POLICIES_AND_COMPLIANCE.md</span>.</div></div>
+            <div class="card mt12"><h4>Traffic → Revenue relationship (illustrative)</h4>
+              <div class="table-wrap"><table><thead><tr><th>Monthly PV</th><th class="num">Impressions (×2.4, 92% fill)</th><th class="num">Page RPM (USD)</th><th class="num">AdSense Rev / mo (USD)</th></tr></thead>
+              <tbody id="adsenseTableBody"></tbody></table></div>
+              <p class="xsmall muted mt8">Page RPM already blends fill, CTR, CPC and geography. Edit Page RPM &amp; impressions in Financial Planning.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- B -->
+        <div class="tab-panel" data-tabgroup="models" data-tab="direct">
+          <div class="card">
+            <h3>B. Direct Advertising</h3>
+            <p class="muted">Sell placements directly to brands: banner ads, sponsored articles, sponsored match previews/analysis, sponsored video, newsletter/podcast/social sponsorships, brand campaigns, sponsored sections. Priced via rate card (flat monthly, CPM, or package). Higher margin than AdSense because no network cut.</p>
+            <div class="grid c3 mt12">
+              <div class="card pad-lg small"><strong>Infra:</strong> ad server or manual slots, CRM, media kit.<br/><strong>Inv.:</strong> low–medium.<br/><strong>OpEx:</strong> ad manager time.<br/><strong>Difficulty:</strong> medium (sales).</div>
+              <div class="card pad-lg small"><strong>Revenue:</strong> price × placements.<br/><strong>Margin:</strong> 70–90%.<br/><strong>Scalability:</strong> medium (sales capacity).<br/><strong>Time:</strong> 4–8 mo.</div>
+              <div class="card pad-lg small"><strong>Pros:</strong> high value, relationships.<br/><strong>Cons:</strong> lumpy, sales effort.<br/><strong>Risks:</strong> advertiser churn.<br/><strong>Partnerships:</strong> brands, agencies.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div class="tab-panel" data-tabgroup="models" data-tab="spon">
+          <div class="card">
+            <h3>C. Paid Sponsorship</h3>
+            <p class="muted">Tiered packages (Bronze/Silver/Gold/Platinum/Exclusive) for sports brands, equipment/apparel, tech, telecom, consumer/beverage, event organizers, academies, local businesses. Deliverables include logo placement, sponsored content, event coverage, social, reporting.</p>
+            <div class="table-wrap mt12"><table><thead><tr><th>Tier</th><th>Typical Deliverables</th><th class="num">Illustrative / mo (USD)</th></tr></thead><tbody>
+              <tr><td><span class="badge gray">Bronze</span></td><td>Logo + 1 sponsored post + report</td><td class="num" data-usd="250">৳30,500</td></tr>
+              <tr><td><span class="badge blue">Silver</span></td><td>Bronze + sponsored article + newsletter</td><td class="num" data-usd="700">৳85,400</td></tr>
+              <tr><td><span class="badge gold">Gold</span></td><td>Silver + video + event coverage</td><td class="num" data-usd="1500">৳183,000</td></tr>
+              <tr><td><span class="badge purple">Platinum</span></td><td>Gold + category exclusivity options</td><td class="num">Custom</td></tr>
+              <tr><td><span class="badge green">Exclusive Partner</span></td><td>Full-category exclusivity + integration</td><td class="num">Custom</td></tr>
+            </tbody></table></div>
+            <div class="grid c3 mt12">
+              <div class="card pad-lg small"><strong>Revenue:</strong> Σ tier price × count.<br/><strong>Margin:</strong> 60–85%.<br/><strong>Scalability:</strong> medium.<br/><strong>Time:</strong> 5–9 mo.</div>
+              <div class="card pad-lg small"><strong>Pros:</strong> recurring, high value.<br/><strong>Cons:</strong> dependency, sales cycle.<br/><strong>Risks:</strong> editorial-independence conflicts.<br/><strong>Partnerships:</strong> brands.</div>
+              <div class="card pad-lg small"><strong>Controls:</strong> disclosure policy, separation of church &amp; state (ads vs editorial), renewal management.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- D -->
+        <div class="tab-panel" data-tabgroup="models" data-tab="blog">
+          <div class="card">
+            <h3>D. Sports Blogging &amp; Journalism</h3>
+            <p class="muted">Monetise via search traffic, Google Discover, evergreen content, exclusives, expert/tactical analysis, match reports, investigative pieces, historical content, opinion. Revenue is indirect (feeds AdSense + direct + subscriptions). SEO is the growth engine.</p>
+            <div class="grid c3 mt12">
+              <div class="card pad-lg small"><strong>SEO strategy:</strong> topical authority, structured data, Core Web Vitals, Discover optimisation, internal linking.<br/><strong>Editorial cost:</strong> writers + editors.<br/><strong>Production:</strong> per-article cost.</div>
+              <div class="card pad-lg small"><strong>Revenue:</strong> traffic → ads; exclusives → subs.<br/><strong>Margin:</strong> high at scale.<br/><strong>Scalability:</strong> high (content moat).<br/><strong>Time:</strong> 3–12 mo (SEO lag).</div>
+              <div class="card pad-lg small"><strong>Risks:</strong> Google dependency, fake-news/credibility, correction rate.<br/><strong>Mitigation:</strong> verification &amp; corrections policy.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E -->
+        <div class="tab-panel" data-tabgroup="models" data-tab="stream">
+          <div class="card">
+            <h3>E. Live Streaming Business <span class="badge red">Rights-Sensitive</span></h3>
+            <div class="notice danger"><span class="n-ico">⛔</span><div><strong>Never assume publicly available broadcasts can be legally restreamed.</strong> Only stream (a) owned programs, (b) properly licensed/authorized events, or (c) commentary/shows around events you have rights to. Broadcasting rights &amp; copyright are strictly enforced.</div></div>
+            <p class="muted">Formats: owned shows, authorized live sports, live commentary, pre/post-match shows, interviews, press conferences, discussions, tournament coverage (licensed), exclusive streaming partnerships. Revenue: streaming ads, video sponsorship, subscription, PPV, premium membership, sponsored shows, brand integrations, licensing/distribution.</p>
+            <div class="grid c3 mt12">
+              <div class="card pad-lg small"><strong>Infra:</strong> encoder, CDN, player, DRM, moderation.<br/><strong>Inv.:</strong> medium–high.<br/><strong>OpEx:</strong> CDN/bandwidth (scales with viewers).<br/><strong>Difficulty:</strong> high.</div>
+              <div class="card pad-lg small"><strong>Revenue:</strong> viewers/1000 × stream RPM + subs.<br/><strong>Margin:</strong> medium (bandwidth).<br/><strong>Scalability:</strong> high but cost scales.<br/><strong>Time:</strong> 12–24 mo.</div>
+              <div class="card pad-lg small"><strong>Risks:</strong> rights claims, takedowns, CDN cost spikes.<br/><strong>Partnerships:</strong> rights holders, leagues.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- F -->
+        <div class="tab-panel" data-tabgroup="models" data-tab="add">
+          <div class="card">
+            <h3>F. Additional Revenue Opportunities</h3>
+            <div class="table-wrap mt12"><table><thead><tr><th>Opportunity</th><th>Classification</th><th>Notes</th></tr></thead><tbody>
+              <tr><td>Premium membership</td><td><span class="badge blue">After traffic growth</span></td><td>Members-only analysis, ad-light.</td></tr>
+              <tr><td>Paid newsletter</td><td><span class="badge blue">After traffic growth</span></td><td>Sponsor + paid tiers.</td></tr>
+              <tr><td>Sports research reports / data subscriptions</td><td><span class="badge gold">After brand establishment</span></td><td>B2B, high value.</td></tr>
+              <tr><td>Podcast sponsorship</td><td><span class="badge blue">After traffic growth</span></td><td>Host-read ads.</td></tr>
+              <tr><td>Affiliate marketing</td><td><span class="badge green">Start immediately</span></td><td>Disclosure required.</td></tr>
+              <tr><td>Merchandise / e-commerce</td><td><span class="badge purple">Long-term expansion</span></td><td>Inventory risk.</td></tr>
+              <tr><td>Ticketing partnerships</td><td><span class="badge gold">After brand establishment</span></td><td>Rev-share.</td></tr>
+              <tr><td>Event promotion / sponsored tournaments</td><td><span class="badge purple">Long-term expansion</span></td><td>Ops heavy.</td></tr>
+              <tr><td>Job boards / academy &amp; business directories</td><td><span class="badge blue">After traffic growth</span></td><td>Listings.</td></tr>
+              <tr><td>Mobile app</td><td><span class="badge purple">Long-term expansion</span></td><td>Push + notifications.</td></tr>
+              <tr><td>White-label content / syndication / B2B media</td><td><span class="badge gold">After brand establishment</span></td><td>Licensing.</td></tr>
+              <tr><td>Corporate partnerships</td><td><span class="badge gold">After brand establishment</span></td><td>CSR + brand.</td></tr>
+            </tbody></table></div>
+            <div class="notice good mt12"><span class="n-ico">✅</span><div>Policy: <strong>no gambling, betting, or prohibited financial models</strong> are included anywhere in this business.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 5. REVENUE OPPORTUNITIES ===================== -->
+      <section class="section" id="sec-revenue-opportunities">
+        <div class="section-head"><div class="eyebrow">Revenue Opportunities</div><h2>Sequenced Monetisation Roadmap</h2><p>Each stream classified by when to start. Sequencing protects cash flow and avoids premature spend.</p></div>
+        <div class="grid c2">
+          <div class="card"><h3><span class="badge green">Start Immediately</span></h3><ul class="muted small"><li>Google AdSense (after approval)</li><li>Affiliate marketing (with disclosure)</li><li>Basic display ad slots</li></ul></div>
+          <div class="card"><h3><span class="badge blue">After Traffic Growth</span></h3><ul class="muted small"><li>Direct banner advertising</li><li>Newsletter + premium membership</li><li>Podcast sponsorship</li><li>Job boards &amp; directories</li></ul></div>
+          <div class="card"><h3><span class="badge gold">After Brand Establishment</span></h3><ul class="muted small"><li>Sponsorship tiers (Gold/Platinum)</li><li>Data/research subscriptions</li><li>Ticketing partnerships</li><li>White-label / syndication / B2B</li><li>Corporate partnerships</li></ul></div>
+          <div class="card"><h3><span class="badge purple">Long-Term Expansion</span></h3><ul class="muted small"><li>Licensed live streaming</li><li>Merchandise / e-commerce</li><li>Event promotion / tournaments</li><li>Mobile application</li></ul></div>
+        </div>
+        <div class="card mt16"><h3>Revenue by Stage (illustrative, Month-12 run-rate)</h3><div class="chart-box"><canvas id="chartProjection"></canvas></div></div>
+      </section>
+
+      <!-- ===================== 6. STARTUP INVESTMENT ===================== -->
+      <section class="section" id="sec-startup-investment">
+        <div class="section-head"><div class="eyebrow">Startup Investment</div><h2>How Much Money Is Needed</h2><p>Three scenarios. BDT primary (৳), USD secondary. Items marked <span class="badge gold">Optional</span> can be deferred. Items needing local quotations are flagged in the docs.</p></div>
+        <div class="grid c3">
+          <div class="kpi brand"><div class="k-label">Total Startup Capital</div><div class="k-value" id="startupTotal">—</div><div class="k-sub">all line items</div></div>
+          <div class="kpi good"><div class="k-label">Mandatory</div><div class="k-value" id="startupMandatory">—</div><div class="k-sub">must-have to launch</div></div>
+          <div class="kpi warn"><div class="k-label">Optional / Deferrable</div><div class="k-value" id="startupOptional">—</div><div class="k-sub">scale later</div></div>
+        </div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Startup Cost Breakdown (editable in Financial Planning)</h3><div class="table-wrap"><table><thead><tr><th>Item</th><th>Type</th><th class="num">Cost</th></tr></thead><tbody id="startupTableBody"></tbody></table></div></div>
+          <div class="card"><h3>Cost Distribution</h3><div class="chart-box tall"><canvas id="chartStartup"></canvas></div></div>
+        </div>
+        <div class="grid c3 mt16">
+          <div class="stage-card"><span class="sc-num">1</span><h4>Small Independent</h4><ul><li>1–2 founders, freelancers</li><li>Shared hosting, template CMS</li><li>Minimal equipment</li><li>Lean working capital</li></ul></div>
+          <div class="stage-card"><span class="sc-num">2</span><h4>Professional Digital Media Co.</h4><ul><li>Small editorial + tech team</li><li>Managed hosting + CDN</li><li>Brand + video kit</li><li>Standard working capital</li></ul></div>
+          <div class="stage-card"><span class="sc-num">3</span><h4>Large-Scale Organization</h4><ul><li>Multi-department</li><li>Streaming infra + DRM</li><li>Studio equipment</li><li>Significant runway</li></ul></div>
+        </div>
+        <p class="muted small mt12">The calculator uses one editable line-item set (Professional scenario as baseline). Adjust each line in <strong>Financial Planning → Startup Costs</strong>. Local quotations required for legal, office, equipment.</p>
+      </section>
+
+      <!-- ===================== 7. FINANCIAL PLANNING ===================== -->
+      <section class="section" id="sec-financial-planning">
+        <div class="section-head"><div class="eyebrow">Financial Planning</div><h2>Edit Assumptions — Everything Recalculates</h2><p>All inputs are illustrative and saved locally. Change any value; charts, KPIs and calculators update instantly. <span class="tag-assume">Assumptions</span> below are planning inputs, not forecasts of guaranteed results.</p></div>
+
+        <div class="tabs" data-group="fin">
+          <div class="tab active" data-tab="traffic">Traffic &amp; Ads</div>
+          <div class="tab" data-tab="rev">Revenue Streams</div>
+          <div class="tab" data-tab="opex">Operating Costs</div>
+          <div class="tab" data-tab="startup">Startup Costs</div>
+          <div class="tab" data-tab="tax">Tax &amp; Finance</div>
+        </div>
+
+        <div class="tab-panel active" data-tabgroup="fin" data-tab="traffic">
+          <div class="card"><h3>Traffic &amp; Advertising Assumptions</h3>
+            <div class="form-grid">
+              <div class="field"><label>Monthly Pageviews (M12)</label><input type="number" data-bind="pvMonth12" step="1000"/><span class="hint">Total monthly pageviews at month 12</span></div>
+              <div class="field"><label>Pages per Session</label><input type="number" data-bind="pagesPerSession" step="0.1"/></div>
+              <div class="field"><label>AdSense Page RPM (USD)</label><input type="number" data-bind="adsensePageRPM" step="0.05"/><span class="hint">Revenue per 1,000 pageviews, geo-mixed</span></div>
+              <div class="field"><label>Ad Impressions / Page</label><input type="number" data-bind="adImpressionsPerPage" step="0.1"/></div>
+              <div class="field"><label>Fill Rate (0–1)</label><input type="number" data-bind="adsenseFillRate" step="0.01" min="0" max="1"/></div>
+              <div class="field"><label>Cash Balance (USD)</label><input type="number" data-bind="cashBalance" step="500"/></div>
+            </div>
+            <div class="notice info mt16"><span class="n-ico">🧮</span><div><strong>Formula:</strong> AdSense = Pageviews ÷ 1000 × Page RPM. Impressions = Pageviews × Impressions/Page × Fill Rate. Page RPM blends geography, CTR, CPC and fill — do not assume all pageviews monetise equally.</div></div>
+            <div class="card mt16"><h4>AdSense scenarios (live)</h4><div class="table-wrap"><table><thead><tr><th>Monthly PV</th><th class="num">Impressions</th><th class="num">Page RPM</th><th class="num">Revenue / mo</th></tr></thead><tbody id="adsenseTableBody2"></tbody></table></div></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tabgroup="fin" data-tab="rev">
+          <div class="card"><h3>Revenue Stream Assumptions (USD)</h3>
+            <div class="form-grid">
+              <div class="field"><label>Direct Banner Price / mo</label><input type="number" data-bind="directBannerPrice" step="10"/></div>
+              <div class="field"><label>Direct Banner Count</label><input type="number" data-bind="directBannerCount" step="1"/></div>
+              <div class="field"><label>Gold Sponsor / mo</label><input type="number" data-bind="sponsorGold" step="50"/></div>
+              <div class="field"><label>Gold Count</label><input type="number" data-bind="sponsorGoldCount" step="1"/></div>
+              <div class="field"><label>Silver Sponsor / mo</label><input type="number" data-bind="sponsorSilver" step="25"/></div>
+              <div class="field"><label>Silver Count</label><input type="number" data-bind="sponsorSilverCount" step="1"/></div>
+              <div class="field"><label>Bronze Sponsor / mo</label><input type="number" data-bind="sponsorBronze" step="10"/></div>
+              <div class="field"><label>Bronze Count</label><input type="number" data-bind="sponsorBronzeCount" step="1"/></div>
+              <div class="field"><label>Newsletter Sponsor / mo</label><input type="number" data-bind="newsletterSponsorPrice" step="25"/></div>
+              <div class="field"><label>Premium Members</label><input type="number" data-bind="premiumMembers" step="10"/></div>
+              <div class="field"><label>Premium Price / mo</label><input type="number" data-bind="premiumPrice" step="0.5"/></div>
+              <div class="field"><label>Stream Viewers / mo</label><input type="number" data-bind="streamViewers" step="500"/></div>
+              <div class="field"><label>Stream RPM (USD)</label><input type="number" data-bind="streamRPM" step="0.1"/></div>
+              <div class="field"><label>Affiliate Rev / mo</label><input type="number" data-bind="affiliateRevenue" step="25"/></div>
+              <div class="field"><label>Merch Rev / mo</label><input type="number" data-bind="merchRevenue" step="25"/></div>
+              <div class="field"><label>Newsletter Subs</label><input type="number" data-bind="newsletterSubs" step="100"/></div>
+            </div>
+            <div class="card mt16"><h4>Live Revenue Breakdown (Month 12)</h4><div class="chart-box"><canvas id="chartRevMix"></canvas></div>
+              <div class="grid c3 mt12 small">
+                <div>AdSense: <strong data-usd="0" id="revAds">—</strong></div>
+                <div>Direct: <strong data-usd="0" id="revDirect">—</strong></div>
+                <div>Sponsorship: <strong data-usd="0" id="revSpon">—</strong></div>
+                <div>Memberships: <strong data-usd="0" id="revMembers">—</strong></div>
+                <div>Streaming: <strong data-usd="0" id="revStream">—</strong></div>
+                <div>Other: <strong data-usd="0" id="revOther">—</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tabgroup="fin" data-tab="opex">
+          <div class="card"><h3>Monthly Operating Expenses (USD, standard stage)</h3>
+            <div class="form-grid" id="opexInputs"></div>
+            <div class="grid c3 mt16">
+              <div class="kpi"><div class="k-label">Lean (×0.70)</div><div class="k-value" id="opexLean">—</div></div>
+              <div class="kpi brand"><div class="k-label">Standard (×1.0)</div><div class="k-value" id="opexStandard">—</div></div>
+              <div class="kpi warn"><div class="k-label">Growth (×1.6)</div><div class="k-value" id="opexGrowth">—</div></div>
+            </div>
+            <div class="table-wrap mt16"><table><thead><tr><th>Line Item</th><th class="num">Monthly (USD)</th></tr></thead><tbody id="opexTableBody"></tbody></table></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tabgroup="fin" data-tab="startup">
+          <div class="card"><h3>Startup Costs (USD, editable)</h3>
+            <div class="form-grid" id="startupInputs"></div>
+            <div class="table-wrap mt16"><table><thead><tr><th>Item</th><th>Type</th><th class="num">Cost (USD)</th></tr></thead><tbody id="startupTableBody2"></tbody></table></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tabgroup="fin" data-tab="tax">
+          <div class="card"><h3>Tax, Depreciation &amp; Financing</h3>
+            <div class="form-grid">
+              <div class="field"><label>Tax Rate (0–1)</label><input type="number" data-bind="taxRate" step="0.01" min="0" max="1"/></div>
+              <div class="field"><label>Depreciation (months)</label><input type="number" data-bind="depreciationMonths" step="6"/></div>
+              <div class="field"><label>USD → BDT Rate</label><input type="number" data-bind="usdRate" step="1"/></div>
+            </div>
+            <div class="notice info mt16"><span class="n-ico">ℹ️</span><div>Financing costs (interest) are kept separate from operating performance. Base model assumes no debt (interest = 0). Taxes apply to positive taxable income only.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 8. REVENUE FORECAST ===================== -->
+      <section class="section" id="sec-revenue-forecast">
+        <div class="section-head"><div class="eyebrow">Revenue Forecast</div><h2>Multi-Period Projections</h2><p>Streams calculated separately. Ramp is an <span class="tag-assume">assumption</span>; not guaranteed. Conservative / Realistic / Optimistic via the top-bar scenario selector.</p></div>
+        <div class="grid c4">
+          <div class="kpi brand"><div class="k-label">Revenue / mo (M12)</div><div class="k-value" id="revTotal">—</div></div>
+          <div class="kpi"><div class="k-label">Pageviews / mo</div><div class="k-value" id="revPV">—</div></div>
+          <div class="kpi"><div class="k-label">Ad Impressions / mo</div><div class="k-value" id="revImpr">—</div></div>
+          <div class="kpi good"><div class="k-label">Scenario</div><div class="k-value" id="revScenario" style="font-size:18px">realistic</div></div>
+        </div>
+        <div class="card mt16"><h3>Revenue by Stream &amp; Period (USD, live)</h3><div class="table-wrap"><table>
+          <thead><tr><th>Stream</th><th class="num">M3</th><th class="num">M6</th><th class="num">M12</th><th class="num">Year 2</th><th class="num">Year 3</th><th class="num">Year 5</th></tr></thead>
+          <tbody id="forecastTableBody"></tbody></table></div>
+          <p class="xsmall muted mt8">Ramp fractions: M3 10%, M6 35%, M12 100%, Y2 210%, Y3 380%, Y5 850% of M12 traffic (editable assumptions). Sponsorship &amp; memberships scale with audience and availability.</p>
+        </div>
+        <div class="card mt16"><h3>Stacked Revenue Projection</h3><div class="chart-box tall"><canvas id="chartProjection2"></canvas></div></div>
+      </section>
+
+      <!-- ===================== 9. PROFIT & LOSS ===================== -->
+      <section class="section" id="sec-profit-loss">
+        <div class="section-head"><div class="eyebrow">Profit &amp; Loss</div><h2>Monthly P&amp;L (Month-12 run-rate)</h2><p>Financing costs kept separate from operations. Tax applies to positive taxable income.</p></div>
+        <div class="grid c2">
+          <div class="card"><h3>P&amp;L Statement</h3><div class="table-wrap"><table><tbody>
+            <tr><td>Gross Revenue</td><td class="num" id="pnlRev">—</td></tr>
+            <tr><td>Direct Costs</td><td class="num" id="pnlDirectCosts">—</td></tr>
+            <tr style="font-weight:700"><td>Gross Profit</td><td class="num" id="pnlGross">—</td></tr>
+            <tr><td>Operating Expenses</td><td class="num" id="pnlOpex">—</td></tr>
+            <tr style="font-weight:800;color:var(--brand)"><td>EBITDA</td><td class="num" id="pnlEbitda">—</td></tr>
+            <tr><td>Depreciation</td><td class="num" id="pnlDepr">—</td></tr>
+            <tr><td>Interest Expense</td><td class="num" id="pnlInterest">—</td></tr>
+            <tr><td>Taxes</td><td class="num" id="pnlTax">—</td></tr>
+            <tr style="font-weight:800"><td>Net Profit</td><td class="num" id="pnlNet">—</td></tr>
+            <tr><td>Net Profit Margin</td><td class="num" id="pnlMargin">—</td></tr>
+          </tbody></table></div></div>
+          <div class="card"><h3>P&amp;L Visual</h3><div class="chart-box tall"><canvas id="chartPnl"></canvas></div></div>
+        </div>
+        <div class="card mt16"><h3>Operating Expense Split</h3><div class="chart-box"><canvas id="chartOpex2"></canvas></div></div>
+      </section>
+
+      <!-- ===================== 10. BREAK-EVEN ===================== -->
+      <section class="section" id="sec-break-even">
+        <div class="section-head"><div class="eyebrow">Break-Even Analysis</div><h2>When Do We Become Profitable?</h2><p>Break-even revenue = Fixed Costs ÷ Contribution Margin. Break-even pageviews assume AdSense-equivalent coverage.</p></div>
+        <div class="grid c4">
+          <div class="kpi"><div class="k-label">Fixed Costs / mo</div><div class="k-value" id="beFixed">—</div></div>
+          <div class="kpi"><div class="k-label">Variable Ratio</div><div class="k-value" id="beVarRatio">—</div></div>
+          <div class="kpi"><div class="k-label">Contribution Margin</div><div class="k-value" id="beCM">—</div></div>
+          <div class="kpi brand"><div class="k-label">Break-Even Revenue</div><div class="k-value" id="beRev">—</div></div>
+        </div>
+        <div class="grid c3 mt16">
+          <div class="kpi"><div class="k-label">Break-Even Pageviews / mo</div><div class="k-value" id="bePV">—</div></div>
+          <div class="kpi"><div class="k-label">Break-Even Gold Sponsors</div><div class="k-value" id="beSponsors">—</div></div>
+          <div class="kpi"><div class="k-label">Break-Even Subscribers</div><div class="k-value" id="beSubs">—</div></div>
+        </div>
+        <div class="card mt16"><h3>Revenue vs Total Cost (across pageviews)</h3><div class="chart-box tall"><canvas id="chartBreakEven"></canvas></div><p class="xsmall muted mt8">Crossover point = break-even. Variable cost ratio (12%) is an adjustable assumption covering CDN/API/payment fees.</p></div>
+      </section>
+
+      <!-- ===================== 11. ROI ===================== -->
+      <section class="section" id="sec-roi">
+        <div class="section-head"><div class="eyebrow">ROI Analysis</div><h2>Returns on Invested Capital</h2><p>3-year cumulative view. Distinguishes accounting profit, cash flow and investor returns. Illustrative ramp.</p></div>
+        <div class="grid c3">
+          <div class="kpi brand"><div class="k-label">Initial Investment</div><div class="k-value" id="roiInvest">—</div></div>
+          <div class="kpi"><div class="k-label">Cumulative Revenue (36m)</div><div class="k-value" id="roiCumRev">—</div></div>
+          <div class="kpi"><div class="k-label">Cumulative Expense (36m)</div><div class="k-value" id="roiCumExp">—</div></div>
+          <div class="kpi good"><div class="k-label">Cumulative Profit</div><div class="k-value" id="roiCumProfit">—</div></div>
+          <div class="kpi"><div class="k-label">ROI %</div><div class="k-value" id="roiPct">—</div></div>
+          <div class="kpi warn"><div class="k-label">Payback</div><div class="k-value" id="roiPayback">—</div></div>
+        </div>
+        <div class="card mt16"><h3>Cumulative Revenue / Expense / Profit</h3><div class="chart-box tall"><canvas id="chartRoi"></canvas></div></div>
+        <div class="grid c3 mt16">
+          <div class="kpi brand"><div class="k-label">Cash Balance</div><div class="k-value" id="runwayCash">—</div><div class="k-sub">editable in Financial Planning</div></div>
+          <div class="kpi bad"><div class="k-label">Monthly Net Burn</div><div class="k-value" id="runwayBurn">—</div><div class="k-sub">if EBITDA negative</div></div>
+          <div class="kpi warn"><div class="k-label">Runway</div><div class="k-value" id="runwayMonths">—</div><div class="k-sub">cash ÷ burn</div></div>
+        </div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div><strong>Accounting profit ≠ cash flow ≠ investor return.</strong> Profit includes non-cash depreciation; cash flow tracks actual cash; investor return depends on exit/valuation and equity %. See Company Valuation &amp; Exit Strategy.</div></div>
+      </section>
+
+      <!-- ===================== 12. FOUNDER & OWNERSHIP ===================== -->
+      <section class="section" id="sec-founder-ownership">
+        <div class="section-head"><div class="eyebrow">Founder &amp; Ownership</div><h2>Cap Table &amp; Dilution</h2><p>Hypothetical example. Editable. New investor pool % dilutes existing holders pro-rata.</p></div>
+        <div class="grid c2">
+          <div class="card"><h3>Cap Table — Before New Round</h3><div class="table-wrap"><table><thead><tr><th>Holder</th><th>Type</th><th class="num">Equity</th></tr></thead><tbody id="capBefore"></tbody></table></div></div>
+          <div class="card"><h3>After New Investor Round</h3>
+            <div class="field mb12"><label>New Investor Pool (%)</label><input type="number" data-bind="newRoundPct" step="1" min="0" max="90"/></div>
+            <div class="table-wrap"><table><thead><tr><th>Holder</th><th class="num">Post-Round Equity</th></tr></thead><tbody id="capAfter"></tbody></table></div>
+            <div class="chart-box short mt12"><canvas id="chartCapAfter"></canvas></div>
+          </div>
+        </div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Founder Structures</h3><ul class="muted small"><li>Single founder</li><li>Co-founders (editorial + business + technical)</li><li>Vesting (e.g., 4-year, 1-year cliff) — recommended</li><li>Founder agreement &amp; IP assignment</li></ul></div>
+          <div class="card"><h3>Ownership Management</h3><ul class="muted small"><li>Share allocation &amp; dilution</li><li>Vesting &amp; shareholder agreements</li><li>Voting rights &amp; board</li><li>Dividends vs reinvestment</li><li>Investor reporting &amp; exit rights</li><li>Buyback arrangements</li></ul></div>
+        </div>
+        <div class="card mt16"><h3>Ownership &amp; Equity Flow</h3><div id="flows-founder-ownership"></div></div>
+        <div class="notice warn mt12"><span class="n-ico">⚠️</span><div>All cap-table figures are <strong>hypothetical examples</strong>, not legal or financial advice. Real equity splits require signed agreements and professional counsel.</div></div>
+      </section>
+
+      <!-- ===================== 13. INVESTOR MANAGEMENT ===================== -->
+      <section class="section" id="sec-investor-management">
+        <div class="section-head"><div class="eyebrow">Investor Management</div><h2>Investor Types &amp; Relations</h2><p>Structures, reporting and governance for outside capital.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Investor Type</th><th>Typical Role</th><th>Expectations</th><th>Equity / Terms</th></tr></thead><tbody>
+          <tr><td>Angel investors</td><td>Early capital + advice</td><td>High growth, exit</td><td>Equity / convertible</td></tr>
+          <tr><td>Strategic investors</td><td>Industry synergies</td><td>Strategic fit</td><td>Equity + partnership</td></tr>
+          <tr><td>Private investors</td><td>Patient capital</td><td>Steady returns</td><td>Equity / revenue-share</td></tr>
+          <tr><td>Seed / VC</td><td>Scaling capital</td><td>Series progression</td><td>Preferred equity</td></tr>
+          <tr><td>Media partnerships</td><td>Distribution + content</td><td>Content access</td><td>Deal-based</td></tr>
+          <tr><td>Revenue-based financing</td><td>Non-dilutive capital</td><td>Revenue share</td><td>Royalty on revenue</td></tr>
+        </tbody></table></div>
+        <div class="grid c3 mt16">
+          <div class="card"><h3>Reporting</h3><ul class="muted small"><li>Monthly KPI snapshot</li><li>Quarterly financials</li><li>Annual strategy review</li></ul></div>
+          <div class="card"><h3>Governance</h3><ul class="muted small"><li>Board seats by stake</li><li>Voting thresholds</li><li>Reserved matters</li></ul></div>
+          <div class="card"><h3>Exit Rights</h3><ul class="muted small"><li>Tag/drag-along</li><li>Buyback clauses</li><li>ROFR</li></ul></div>
+        </div>
+        <div class="card mt16"><h3>Investor Funding Flow</h3><div class="flow-wrap"><div class="mermaid">
+flowchart LR
+  A([Investor ID]) --> B[Pitch] --> C[Due Diligence] --> D[Valuation] --> E{Negotiate} --> F[Shareholder Agreement] --> G[Funds + Equity] --> H[Reporting] --> I([Next Round / Exit])
+        </div></div></div>
+      </section>
+
+      <!-- ===================== 14. FUNDING STRATEGY ===================== -->
+      <section class="section" id="sec-funding-strategy">
+        <div class="section-head"><div class="eyebrow">Funding Strategy</div><h2>Funding Roadmap</h2><p>Stages from bootstrapping to Series A (only if justified). Equity considerations and milestones per stage.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Requirement</th><th>Objective / Use</th><th>Equity</th><th>Milestone</th><th>Readiness</th></tr></thead><tbody>
+          <tr><td>Bootstrapping</td><td>Founder savings</td><td>MVP + launch</td><td>100% founder</td><td>Traffic + content</td><td>Now</td></tr>
+          <tr><td>Friends &amp; family</td><td>Small</td><td>Working capital</td><td>0–10%</td><td>First revenue</td><td>Pre-launch</td></tr>
+          <tr><td>Angel</td><td>Moderate</td><td>Team + growth</td><td>10–20%</td><td>EBITDA trend</td><td>After traction</td></tr>
+          <tr><td>Pre-seed</td><td>Moderate</td><td>Product + audience</td><td>10–15%</td><td>Retained audience</td><td>Validation</td></tr>
+          <tr><td>Seed</td><td>Significant</td><td>Scale channels</td><td>15–25%</td><td>Revenue run-rate</td><td>Growth</td></tr>
+          <tr><td>Strategic</td><td>Deal-based</td><td>Distribution</td><td>Negotiated</td><td>Partnership KPIs</td><td>Brand established</td></tr>
+          <tr><td>Series A (if justified)</td><td>Large</td><td>Market expansion</td><td>20–30%</td><td>Predictable growth</td><td>Maturity</td></tr>
+          <tr><td>Expansion</td><td>Large</td><td>New markets</td><td>Negotiated</td><td>Multi-market</td><td>Scale</td></tr>
+        </tbody></table></div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Sample Pitch Deck Structure</h3><ol class="muted small"><li>Problem</li><li>Solution</li><li>Market opportunity</li><li>Business model</li><li>Revenue streams</li><li>Competitive advantages</li><li>Audience growth</li><li>Financial projections</li><li>Team</li><li>Funding requirements</li><li>Investor returns</li><li>Exit opportunities</li></ol></div>
+          <div class="card"><h3>Funding Principles</h3><ul class="muted small"><li>Raise on milestones, not desperation</li><li>Minimise dilution early</li><li>Keep non-dilutive options open (RBF, grants)</li><li>Model dilution before signing</li><li>Separate financing from operations</li></ul></div>
+        </div>
+      </section>
+
+      <!-- ===================== 15. OPERATIONAL WORKFLOW ===================== -->
+      <section class="section" id="sec-operational-workflow">
+        <div class="section-head"><div class="eyebrow">Operational Workflow</div><h2>Editorial, AdSense, Advertising, Sponsorship, Streaming, Subscription &amp; Financial Flows</h2><p>Each flow includes start, process, decision points, responsibilities, outputs and end.</p></div>
+        <div id="flows-operational-workflow"></div>
+      </section>
+
+      <!-- ===================== 16. BUSINESS ARCHITECTURE ===================== -->
+      <section class="section" id="sec-business-architecture">
+        <div class="section-head"><div class="eyebrow">Business Architecture</div><h2>Company &amp; Platform Architecture</h2><p>Departments, hierarchy, responsibilities and the digital platform stack.</p></div>
+        <div class="grid c2">
+          <div class="card"><h3>Organisational Hierarchy</h3><div class="flow-wrap"><div class="mermaid">
+flowchart TD
+  CEO[CEO / Managing Director] --> ED[Editor-in-Chief]
+  CEO --> CTO[CTO]
+  CEO --> CMO[Marketing Head]
+  CEO --> CFO[Finance Head]
+  ED --> WR[Writers/Journalists]
+  ED --> VID[Video Team]
+  CTO --> DEV[Developers]
+  CTO --> OPS[IT/Security]
+  CMO --> SEO[SEO/Social]
+  CFO --> ACC[Accounts/Legal]
+  CEO --> IR[Investor Relations]
+          </div></div></div>
+          <div class="card"><h3>Platform Architecture</h3><div class="flow-wrap"><div class="mermaid">
+flowchart LR
+  U[Users] --> FE[Frontend - Responsive Web/App]
+  FE --> BE[Backend APIs]
+  BE --> DB[(Database)]
+  BE --> CMS[CMS / Editorial]
+  BE --> AD[Ad Manager]
+  BE --> CRM[Sponsorship CRM]
+  BE --> SUB[Subscription Mgmt]
+  BE --> AN[Analytics]
+  BE --> FIN[Financial Dashboard]
+  BE --> INV[Investor Dashboard]
+  BE --> SEC[Security / Backup / DR]
+          </div></div></div>
+        </div>
+        <div class="table-wrap mt16"><table><thead><tr><th>Department</th><th>Responsibilities</th><th>Authority</th><th>Reports To</th></tr></thead><tbody>
+          <tr><td>Editorial</td><td>News, verification, SEO content</td><td>Publish/approve content</td><td>Editor-in-Chief</td></tr>
+          <tr><td>Technology</td><td>Platform, security, uptime</td><td>Deploy, infra</td><td>CTO</td></tr>
+          <tr><td>Marketing</td><td>SEO, social, growth</td><td>Campaigns</td><td>CMO</td></tr>
+          <tr><td>Advertising</td><td>Direct sales, AdSense ops</td><td>Pricing within policy</td><td>CMO</td></tr>
+          <tr><td>Sponsorship</td><td>Sponsor CRM, delivery</td><td>Contracts (limit)</td><td>CEO</td></tr>
+          <tr><td>Finance</td><td>AP/AR, payroll, tax, reporting</td><td>Expenses (limit)</td><td>CFO</td></tr>
+          <tr><td>Legal &amp; Compliance</td><td>Policies, rights, disputes</td><td>Veto on risk</td><td>CEO</td></tr>
+          <tr><td>Support</td><td>Audience &amp; advertiser care</td><td>Tickets</td><td>CMO</td></tr>
+          <tr><td>Investor Relations</td><td>Reporting, funding</td><td>Disclosure</td><td>CEO</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- ===================== 17. POLICIES & COMPLIANCE ===================== -->
+      <section class="section" id="sec-policies-compliance">
+        <div class="section-head"><div class="eyebrow">Policies &amp; Compliance</div><h2>Policy Framework</h2><p>29 policies. Bangladesh legal context + international considerations. <strong>Sample language is not legal advice.</strong></p></div>
+        <div class="row mb12"><button class="btn sm" data-action="expand-all">Expand All</button><button class="btn sm" data-action="collapse-all">Collapse All</button></div>
+        <div id="policyAcc"></div>
+        <div class="notice danger mt12"><span class="n-ico">⚖️</span><div>Mandatory legal obligations (e.g., RJSC registration, TIN/VAT, labour law, copyright, data protection) require local professional advice. This document distinguishes <span class="badge red">Mandatory</span>, <span class="badge gold">Recommended</span> and <span class="badge gray">Sample Internal Rule</span>.</div></div>
+      </section>
+
+      <!-- ===================== 18. KPI MONITORING ===================== -->
+      <section class="section" id="sec-kpi-monitoring">
+        <div class="section-head"><div class="eyebrow">KPI Monitoring</div><h2>Performance Framework</h2><p>Each KPI: formula, data source, frequency, owner.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>KPI</th><th>Formula</th><th>Source</th><th>Freq.</th><th>Owner</th></tr></thead><tbody id="kpiTableBody"></tbody></table></div>
+      </section>
+
+      <!-- ===================== 19. RISK MANAGEMENT ===================== -->
+      <section class="section" id="sec-risk-management">
+        <div class="section-head"><div class="eyebrow">Risk Management</div><h2>SWOT &amp; Risk Register</h2><p>Probability × Impact, mitigation and owner. Initial thresholds are adjustable assumptions.</p></div>
+        <div class="swot">
+          <div class="sw s"><h4>✅ Strengths</h4><ul><li>Low-cost digital start</li><li>Global reach via SEO/social</li><li>Diversified revenue potential</li><li>Independent, trusted brand</li></ul></div>
+          <div class="sw w"><h4>⚠️ Weaknesses</h4><ul><li>Low regional RPM</li><li>Google/AdSense dependency</li><li>Limited early capital</li><li>Content cost vs revenue</li></ul></div>
+          <div class="sw o"><h4>🚀 Opportunities</h4><ul><li>South Asia digital growth</li><li>Local sponsor demand</li><li>Video &amp; streaming (licensed)</li><li>Data/B2B monetisation</li></ul></div>
+          <div class="sw t"><h4>🔥 Threats</h4><ul><li>Algorithm changes</li><li>Copyright claims</li><li>AdSense bans</li><li>Sponsor/fake-news risk</li></ul></div>
+        </div>
+        <div class="table-wrap mt16"><table><thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th><th>Owner</th></tr></thead><tbody id="riskTableBody"></tbody></table></div>
+        <div class="card mt16"><h3>Risk Management Flow</h3><div class="flow-wrap"><div class="mermaid">
+flowchart TD
+  A([Identify]) --> B[Likelihood × Impact] --> C{High?} --> D[Mitigate/Avoid/Transfer] --> E[Owner + KPI] --> F{Resolved?} --> G([Close])
+        </div></div></div>
+      </section>
+
+      <!-- ===================== 20. BUSINESS LIFECYCLE ===================== -->
+      <section class="section" id="sec-business-lifecycle">
+        <div class="section-head"><div class="eyebrow">Business Lifecycle</div><h2>Seven-Stage Roadmap</h2><p>From idea to exit/continuation.</p></div>
+        <div class="grid c3">
+          <div class="stage-card"><span class="sc-num">1</span><h4>Idea</h4><ul><li>Market research</li><li>Concept</li><li>Audience &amp; competition</li><li>Model selection</li></ul></div>
+          <div class="stage-card"><span class="sc-num">2</span><h4>Validation</h4><ul><li>MVP + website</li><li>Initial content</li><li>Audience test</li><li>Feedback</li></ul></div>
+          <div class="stage-card"><span class="sc-num">3</span><h4>Startup</h4><ul><li>Register company</li><li>Recruit</li><li>Editorial + SEO</li><li>Initial monetisation</li></ul></div>
+          <div class="stage-card"><span class="sc-num">4</span><h4>Growth</h4><ul><li>Traffic expansion</li><li>AdSense optimisation</li><li>Direct ads + sponsors</li><li>Video/podcast</li></ul></div>
+          <div class="stage-card"><span class="sc-num">5</span><h4>Expansion</h4><ul><li>Licensed streaming</li><li>Premium subs</li><li>Events/partners</li><li>Apps/new markets</li></ul></div>
+          <div class="stage-card"><span class="sc-num">6</span><h4>Maturity</h4><ul><li>Multi-channel</li><li>Departments</li><li>Predictable cash</li><li>Governance</li></ul></div>
+          <div class="stage-card"><span class="sc-num">7</span><h4>Exit / Continue</h4><ul><li>Buyout / acquisition</li><li>Merger / asset sale</li><li>MBO / IPO (if realistic)</li><li>Orderly closure</li></ul></div>
+          <div class="card"><h3>Exit Mechanics</h3><ul class="muted small"><li>Founder buyout / investor buyout</li><li>Strategic acquisition / merger</li><li>Asset / share sale</li><li>MBO / IPO (rare) / closure</li></ul></div>
+        </div>
+        <div class="card mt16"><h3>Lifecycle Flow</h3><div id="flows-business-lifecycle"></div></div>
+      </section>
+
+      <!-- ===================== 21. EXPANSION STRATEGY ===================== -->
+      <section class="section" id="sec-expansion-strategy">
+        <div class="section-head"><div class="eyebrow">Expansion Strategy</div><h2>Scaling &amp; New Markets</h2><p>Expansion gated by cash flow and validated demand.</p></div>
+        <div class="grid c2">
+          <div class="card"><h3>Expansion Levers</h3><ul class="muted small"><li>New sports / niches</li><li>New geographies (South Asia → global)</li><li>Video &amp; live (licensed)</li><li>Subscriptions &amp; data</li><li>Mobile app</li><li>Events &amp; commerce</li></ul></div>
+          <div class="card"><h3>Gating Rules <span class="badge gold">Adjustable</span></h3><ul class="muted small"><li>Reserve ≥ 3 months OpEx</li><li>Positive EBITDA trend</li><li>Validated demand for new stream</li><li>No rights/copyright exposure</li></ul></div>
+        </div>
+        <div class="card mt16"><h3>Expansion Flow</h3><div class="flow-wrap"><div class="mermaid">
+flowchart LR
+  A([Stable Cash]) --> B{Reserve OK?} --> C[New Stream] --> D[Validate] --> E{Validated?} --> F[Budget] --> G[Launch] --> H[Measure] --> I([Scale/Stop])
+        </div></div></div>
+      </section>
+
+      <!-- ===================== 22. COMPANY VALUATION ===================== -->
+      <section class="section" id="sec-company-valuation">
+        <div class="section-head"><div class="eyebrow">Company Valuation</div><h2>Valuation Framework</h2><p>Revenue multiples, EBITDA multiples, DCF, asset. Hypothetical. No promised valuation.</p></div>
+        <div class="form-grid card">
+          <div class="field"><label>Revenue Multiple (×)</label><input type="number" data-bind="revMultiple" step="0.1"/></div>
+          <div class="field"><label>EBITDA Multiple (×)</label><input type="number" data-bind="ebitdaMultiple" step="0.5"/></div>
+          <div class="field"><label>Discount Rate (0–1)</label><input type="number" data-bind="discountRate" step="0.01"/></div>
+          <div class="field"><label>Terminal Growth (0–1)</label><input type="number" data-bind="terminalGrowth" step="0.01"/></div>
+        </div>
+        <div class="grid c4 mt16">
+          <div class="kpi brand"><div class="k-label">Annual Revenue</div><div class="k-value" id="valAnnualRev">—</div></div>
+          <div class="kpi"><div class="k-label">Annual EBITDA</div><div class="k-value" id="valAnnualEbitda">—</div></div>
+          <div class="kpi good"><div class="k-label">Revenue Multiple</div><div class="k-value" id="valRev">—</div></div>
+          <div class="kpi"><div class="k-label">EBITDA Multiple</div><div class="k-value" id="valEbitda">—</div></div>
+          <div class="kpi"><div class="k-label">DCF</div><div class="k-value" id="valDcf">—</div></div>
+          <div class="kpi warn"><div class="k-label">Asset</div><div class="k-value" id="valAsset">—</div></div>
+        </div>
+        <div class="card mt16"><h3>Valuation Methods Comparison</h3><div class="chart-box"><canvas id="chartValuation"></canvas></div></div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div>Consider audience value, brand, IP, content library, tech assets and recurring revenue. Multiples are illustrative; real valuations depend on growth, risk and comparables.</div></div>
+      </section>
+
+      <!-- ===================== 23. EXIT STRATEGY ===================== -->
+      <section class="section" id="sec-exit-strategy">
+        <div class="section-head"><div class="eyebrow">Exit Strategy</div><h2>How Founders &amp; Investors Realise Returns</h2><p>Each method: how it works, pros, cons, financial implications.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Method</th><th>How it works</th><th>Advantages</th><th>Disadvantages</th><th>Financial implication</th></tr></thead><tbody>
+          <tr><td>Founder buyout</td><td>Founder buys others' shares</td><td>Control retained</td><td>Needs capital</td><td>Redistributes equity</td></tr>
+          <tr><td>Investor buyout</td><td>Investors sell to founder/3rd party</td><td>Liquidity for investors</td><td>Valuation gap</td><td>Cash to sellers</td></tr>
+          <tr><td>Strategic acquisition</td><td>Larger co buys the company</td><td>Premium possible</td><td>Integration risk</td><td>Exit proceeds</td></tr>
+          <tr><td>Merger</td><td>Combine with peer</td><td>Synergies</td><td>Complexity</td><td>Share swap</td></tr>
+          <tr><td>Asset sale</td><td>Sell content/tech/brand</td><td>Simple</td><td>Loses going concern</td><td>Asset proceeds</td></tr>
+          <tr><td>Share sale</td><td>Sell equity stake</td><td>Partial liquidity</td><td>Dilution/governance</td><td>Per-share value</td></tr>
+          <tr><td>MBO</td><td>Management buys out</td><td>Continuity</td><td>Financing</td><td>Debt-funded</td></tr>
+          <tr><td>IPO (if realistic)</td><td>Public listing</td><td>Large liquidity</td><td>Cost, scrutiny, rare</td><td>Market valuation</td></tr>
+          <tr><td>Orderly closure</td><td>Wind down, sell assets</td><td>Return residual</td><td>Low returns</td><td>Liquidation value</td></tr>
+        </tbody></table></div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Hypothetical Exit (illustrative)</h3><p class="muted small">If annual revenue ≈ <span id="exitRev">—</span> and a 2.5× revenue multiple applies, implied valuation ≈ <span id="exitVal">—</span>. A founder with 55% would realise ≈ <span id="exitFounder">—</span> before tax/fees. Purely illustrative; not a promise.</p></div>
+          <div class="card"><h3>Exit Flow</h3><div id="flows-exit-strategy"></div></div>
+        </div>
+      </section>
+
+      <!-- ===================== 24. IMPLEMENTATION ROADMAP ===================== -->
+      <section class="section" id="sec-implementation-roadmap">
+        <div class="section-head"><div class="eyebrow">Implementation Roadmap</div><h2>Execution Plan</h2><p>Milestones depend on actual performance, not arbitrary deadlines.</p></div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-stage">Days 1–30 · Research &amp; Brand</div><div class="tl-desc">Market research, niche selection, branding, domain, business plan.</div></div>
+          <div class="tl-item"><div class="tl-stage">Days 31–60 · Build</div><div class="tl-desc">Website/CMS, editorial setup, content production, analytics.</div></div>
+          <div class="tl-item"><div class="tl-stage">Days 61–90 · Launch</div><div class="tl-desc">Launch, SEO, social distribution, audience acquisition, optimisation.</div></div>
+          <div class="tl-item"><div class="tl-stage">Months 4–6 · Monetise</div><div class="tl-desc">AdSense readiness, direct advertiser outreach, sponsorship proposals.</div></div>
+          <div class="tl-item"><div class="tl-stage">Months 7–12 · Diversify</div><div class="tl-desc">Revenue diversification, team expansion, video &amp; podcast.</div></div>
+          <div class="tl-item"><div class="tl-stage">Year 2 · Expand</div><div class="tl-desc">Licensed streaming, subscriptions, commercial partnerships.</div></div>
+          <div class="tl-item"><div class="tl-stage">Years 3–5 · Scale</div><div class="tl-desc">Regional expansion, professional operations, investor opportunities.</div></div>
+        </div>
+        <div class="card mt16"><h3>Roadmap Flow</h3><div id="flows-implementation-roadmap"></div></div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/calculators.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/flowcharts.js"></script>
+<script src="assets/js/content.js"></script>
+</body>
+</html>
