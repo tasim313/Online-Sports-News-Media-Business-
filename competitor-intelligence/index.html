@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SportsScope — Competitor Intelligence (50+ Sports & News Media)</title>
+<meta name="description" content="Competitive intelligence & 10-year financial research dashboard for 50+ sports and news media companies. No fabricated data; unknowns classified." />
+<link rel="stylesheet" href="assets/css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="logo">S</div><div><div class="name">SportsScope</div><div class="sub">Competitor Intelligence</div></div></div>
+    <nav class="nav-scroll">
+      <div class="nav-group-title">Overview</div>
+      <div class="nav-item active" data-target="executive-summary"><span class="ni-ico">📊</span><span class="ni-label">Executive Summary</span></div>
+      <div class="nav-item" data-target="competitor-database"><span class="ni-ico">🗂️</span><span class="ni-label">Competitor Database</span></div>
+      <div class="nav-item" data-target="company-profiles"><span class="ni-ico">🏢</span><span class="ni-label">Company Profiles</span></div>
+      <div class="nav-item" data-target="company-history"><span class="ni-ico">🕰️</span><span class="ni-label">Company History</span></div>
+
+      <div class="nav-group-title">Financial &amp; Ads</div>
+      <div class="nav-item" data-target="financial-analysis"><span class="ni-ico">📈</span><span class="ni-label">10-Year Financials</span></div>
+      <div class="nav-item" data-target="advertising-analysis"><span class="ni-ico">📢</span><span class="ni-label">Advertising Analysis</span></div>
+      <div class="nav-item" data-target="adsense-investigation"><span class="ni-ico">🔍</span><span class="ni-label">AdSense Investigation</span></div>
+      <div class="nav-item" data-target="financial-benchmarking"><span class="ni-ico">🧮</span><span class="ni-label">Financial Benchmarking</span></div>
+
+      <div class="nav-group-title">Audience &amp; SEO</div>
+      <div class="nav-item" data-target="traffic-analysis"><span class="ni-ico">🚦</span><span class="ni-label">Traffic Analysis</span></div>
+      <div class="nav-item" data-target="audience-geography"><span class="ni-ico">🌐</span><span class="ni-label">Audience Geography</span></div>
+      <div class="nav-item" data-target="seo-benchmarking"><span class="ni-ico">🔎</span><span class="ni-label">SEO Benchmarking</span></div>
+      <div class="nav-item" data-target="google-trends"><span class="ni-ico">📊</span><span class="ni-label">Google Trends</span></div>
+      <div class="nav-item" data-target="content-comparison"><span class="ni-ico">📝</span><span class="ni-label">Content Comparison</span></div>
+
+      <div class="nav-group-title">Models</div>
+      <div class="nav-item" data-target="sponsorship"><span class="ni-ico">🤝</span><span class="ni-label">Sponsorship</span></div>
+      <div class="nav-item" data-target="subscription"><span class="ni-ico">💳</span><span class="ni-label">Subscription Models</span></div>
+      <div class="nav-item" data-target="streaming"><span class="ni-ico">📡</span><span class="ni-label">Live Streaming</span></div>
+      <div class="nav-item" data-target="revenue-model-comparison"><span class="ni-ico">🧩</span><span class="ni-label">Revenue Model Comparison</span></div>
+
+      <div class="nav-group-title">Structure</div>
+      <div class="nav-item" data-target="employees"><span class="ni-ico">👔</span><span class="ni-label">Employee Benchmarking</span></div>
+      <div class="nav-item" data-target="ownership"><span class="ni-ico">🏛️</span><span class="ni-label">Ownership &amp; Acquisition</span></div>
+      <div class="nav-item" data-target="success-failure"><span class="ni-ico">⚖️</span><span class="ni-label">Success &amp; Failure</span></div>
+      <div class="nav-item" data-target="scorecard"><span class="ni-ico">🏆</span><span class="ni-label">Competitor Scorecard</span></div>
+
+      <div class="nav-group-title">Strategy</div>
+      <div class="nav-item" data-target="bangladesh-opportunities"><span class="ni-ico">🇧🇩</span><span class="ni-label">Bangladesh Opportunities</span></div>
+      <div class="nav-item" data-target="startup-recommendations"><span class="ni-ico">🚀</span><span class="ni-label">Startup Recommendations</span></div>
+      <div class="nav-item" data-target="sources"><span class="ni-ico">📚</span><span class="ni-label">Sources &amp; Data Quality</span></div>
+    </nav>
+    <div class="sidebar-foot">Illustrative research tool · No fabricated data · v1.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="hamburger">☰</button>
+      <div class="page-title" id="pageTitle">Executive Summary</div>
+      <div class="spacer"></div>
+      <div class="controls">
+        <button class="btn sm" id="themeToggle">🌗</button>
+        <button class="btn sm" data-action="export-csv">⬇ CSV</button>
+        <button class="btn sm" data-action="print">🖨 Print</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- 1 Executive Summary -->
+      <section class="section active" id="sec-executive-summary">
+        <div class="section-head"><div class="eyebrow">Executive Summary</div><h2>Competitive Intelligence — 50+ Sports &amp; News Media</h2><p>2016–2025 (+2026 YTD) research. <strong>Data integrity first:</strong> only public/observable facts are stored; all financial, traffic and employee numbers are <span class="badge gray">Unknown</span> until sourced and entered. Nothing is fabricated.</p></div>
+        <div class="notice warn"><span class="n-ico">⚠️</span><div><strong>Reading this:</strong> <span class="badge green">Confirmed</span> audited · <span class="badge blue">Disclosed</span> public/observable (not audited) · <span class="badge gold">Estimate</span> third-party/modeled · <span class="badge gray">Unknown</span> no reliable data. Parent-company figures are never attributed to a single website.</div></div>
+        <div class="grid c4 mt16">
+          <div class="kpi brand"><div class="k-label">Companies</div><div class="k-value" id="esCount">—</div><div class="k-sub">in database</div></div>
+          <div class="kpi"><div class="k-label">Categories</div><div class="k-value" id="esCats">—</div><div class="k-sub">classification</div></div>
+          <div class="kpi"><div class="k-label">Countries</div><div class="k-value" id="esCountries">—</div><div class="k-sub">coverage</div></div>
+          <div class="kpi warn"><div class="k-label">Verified Financials</div><div class="k-value">0</div><div class="k-sub">until entered</div></div>
+        </div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Category Distribution</h3><div class="chart-box"><canvas id="chartCategory"></canvas></div></div>
+          <div class="card"><h3>Companies by Country (top 12)</h3><div class="chart-box"><canvas id="chartCountry"></canvas></div></div>
+        </div>
+        <div class="card mt16"><h3>Key Learnings (qualitative, sourced)</h3><ul class="muted small"><li>Ad-supported free models (Cricbuzz, Goal, Sportskeeda) scale on SEO + social; subscription-first (The Athletic, NYT) monetises depth.</li><li>Broadcasters (ESPN, Sky, DAZN) monetise rights + subscriptions; capital-intensive.</li><li>Public-service (BBC) differs (license fee); state-backed (Al Jazeera, France 24) differ again.</li><li>AdSense is rarely the whole story at scale — direct sales, programmatic (Ad Manager), sponsorships and subscriptions layer on top.</li><li>Parent vs brand distinction is critical (Cricbuzz→Times Internet; The Athletic→NYT).</li></ul></div>
+      </section>
+
+      <!-- 2 Database -->
+      <section class="section" id="sec-competitor-database">
+        <div class="section-head"><div class="eyebrow">Competitor Database</div><h2>Search, Filter &amp; Compare</h2><p>50+ companies. AdSense column = usage classification (mostly Unknown — Google does not publish per-publisher earnings).</p></div>
+        <div class="form-grid card">
+          <div class="field"><label>Search</label><input id="cSearch" placeholder="Name, country, parent, sport…"/></div>
+          <div class="field"><label>Country</label><select id="cCountry"></select></div>
+          <div class="field"><label>Category</label><select id="cCat"></select></div>
+          <div class="field"><label>Revenue model</label><select id="cModel"><option value="">All models</option><option>Display ads</option><option>Direct ads</option><option>Subscription</option><option>Sponsorship</option><option>Broadcast</option></select></div>
+        </div>
+        <div class="row between mt12"><span class="muted small" id="cCount"></span><button class="btn sm" data-action="clear-compare">Clear compare</button></div>
+        <div class="table-wrap mt8"><table><thead><tr><th>Company</th><th>Country</th><th>Founded</th><th>Parent</th><th>Category</th><th>Model</th><th>AdSense</th><th></th></tr></thead><tbody id="cBody"></tbody></table></div>
+        <div class="card mt16"><h3>Compare (up to 4)</h3><div id="compareBox"></div></div>
+      </section>
+
+      <!-- 3 Profiles -->
+      <section class="section" id="sec-company-profiles">
+        <div class="section-head"><div class="eyebrow">Company Profiles</div><h2>Individual Research Profiles</h2><p>Facts + revenue streams with status. Financials marked Unknown until sourced.</p></div>
+        <div class="field card mb12"><label>Search profiles</label><input id="pSearch" placeholder="Filter by name or country…"/></div>
+        <div class="grid c2" id="profileList"></div>
+      </section>
+
+      <!-- 4 History -->
+      <section class="section" id="sec-company-history">
+        <div class="section-head"><div class="eyebrow">Company History</div><h2>10-Year Timeline (2016–2026)</h2><p>Per-company milestones. Where data is unavailable, the year is marked Unknown — never interpolated.</p></div>
+        <div class="card"><div class="timeline" id="historyTimeline"></div></div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div>Enter sourced milestones per company in the 10-Year Financial table notes or extend the dataset. Missing years are shown as Unknown, not fabricated.</div></div>
+      </section>
+
+      <!-- 5 Financial -->
+      <section class="section" id="sec-financial-analysis">
+        <div class="section-head"><div class="eyebrow">10-Year Financial Analysis</div><h2>Enter Sourced Figures Only</h2><p>Blank = Unknown. Enter audited/disclosed figures with the reporting currency/unit noted in the report. Parent vs subsidiary must not be mixed.</p></div>
+        <div class="field card mb12" style="max-width:340px"><label>Company</label><select id="finCompany"></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Year</th><th class="num">Revenue</th><th class="num">Advertising</th><th class="num">Subscription</th><th class="num">Other</th><th class="num">Op Profit</th><th class="num">Net Profit</th></tr></thead><tbody id="finBody"></tbody></table></div>
+        <p class="xsmall muted mt8" id="finNote"></p>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Revenue / Advertising / Subscription</h3><div class="chart-box tall"><canvas id="chartFin"></canvas></div></div>
+          <div class="card"><h3>Computed Metrics</h3><div id="finAnalysisOut"></div></div>
+        </div>
+      </section>
+
+      <!-- 6 Advertising -->
+      <section class="section" id="sec-advertising-analysis">
+        <div class="section-head"><div class="eyebrow">Advertising Revenue Analysis</div><h2>How They Monetise Traffic</h2><p>Advertising is the common thread, but the mix differs. Distinguish AdSense vs Ad Manager vs direct vs programmatic.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>Primary ad model</th><th>Direct sales?</th><th>Programmatic?</th><th>Classification</th></tr></thead><tbody id="advBody"></tbody></table></div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div>Google does not publish per-publisher AdSense revenue. Never state a competitor's AdSense earnings unless a credible source explicitly discloses them.</div></div>
+      </section>
+
+      <!-- 7 AdSense -->
+      <section class="section" id="sec-adsense-investigation">
+        <div class="section-head"><div class="eyebrow">Google AdSense Investigation</div><h2>Three Separate Measurements</h2><p>Never confuse these. Most companies: <span class="badge gray">Unknown</span> for AdSense specifically.</p></div>
+        <div class="grid c3">
+          <div class="card"><h3><span class="badge green">A. Verified AdSense Revenue</span></h3><p class="muted small">Only amounts supported by credible disclosure. In this dataset: <strong>none verified</strong> — no reliable per-publisher AdSense figures exist.</p></div>
+          <div class="card"><h3><span class="badge gold">B. Estimated Advertising Revenue</span></h3><p class="muted small">Modeled from traffic × RPM assumptions — always labeled Estimate. Use the estimation model in the main business app; never present as actual.</p></div>
+          <div class="card"><h3><span class="badge blue">C. Total Company Advertising Revenue</span></h3><p class="muted small">From company filings (where public). Enter in the 10-Year table; otherwise Unknown.</p></div>
+        </div>
+        <div class="card mt16"><h3>Ad-Tech Classification (observable)</h3><div class="table-wrap"><table><thead><tr><th>Company</th><th>Google ad tech (observable)</th><th>AdSense specifically</th></tr></thead><tbody id="adsenseBody"></tbody></table></div><p class="xsmall muted mt8">“Uses Google ad tech” ≠ “uses AdSense”. Header bidding / Ad Manager / AdX are distinct from AdSense.</p></div>
+      </section>
+
+      <!-- 8 Traffic -->
+      <section class="section" id="sec-traffic-analysis">
+        <div class="section-head"><div class="eyebrow">Website Traffic Analysis</div><h2>Audience Intelligence</h2><p>Traffic figures are third-party estimates (Similarweb/Semrush/Ahrefs) or Unknown. No private analytics are accessed.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>Monthly visits</th><th>Source</th><th>Classification</th></tr></thead><tbody id="trafficBody"></tbody></table></div>
+        <div class="notice warn mt12"><span class="n-ico">⚠️</span><div>Do not claim access to private Google Analytics or Search Console data. Enter only cited third-party estimates, labeled as such.</div></div>
+      </section>
+
+      <!-- 9 Geography -->
+      <section class="section" id="sec-audience-geography">
+        <div class="section-head"><div class="eyebrow">Audience Geography</div><h2>Where Audiences Are</h2><p>Geographic mix is estimate/Unknown unless disclosed. Use for targeting, not as fact.</p></div>
+        <div class="card"><div class="chart-box"><canvas id="chartCountry2"></canvas></div><p class="xsmall muted mt8">Chart shows company HQ country distribution (real, from dataset) — not audience geography (which is Unknown/estimated).</p></div>
+      </section>
+
+      <!-- 10 SEO -->
+      <section class="section" id="sec-seo-benchmarking">
+        <div class="section-head"><div class="eyebrow">SEO Benchmarking</div><h2>Search Strength (qualitative)</h2><p>Observed practices; no invented keyword volumes.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>SEO approach (observable)</th><th>Strength (analyst)</th></tr></thead><tbody id="seoBody"></tbody></table></div>
+      </section>
+
+      <!-- 11 Trends -->
+      <section class="section" id="sec-google-trends">
+        <div class="section-head"><div class="eyebrow">Google Trends Research</div><h2>Demand Topics (manual framework)</h2><p>No live connection. Use Google Trends manually; record observations here.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Topic</th><th>Market</th><th>Seasonality</th><th>Opportunity</th></tr></thead><tbody>
+          <tr><td>Cricket (BPL/internationals)</td><td>Bangladesh</td><td>Year-round, peaks in season</td><td>High</td></tr>
+          <tr><td>Football (EPL/La Liga)</td><td>Bangladesh</td><td>Aug–May</td><td>High</td></tr>
+          <tr><td>IPL</td><td>South Asia</td><td>Apr–May spike</td><td>High</td></tr>
+          <tr><td>FIFA World Cup</td><td>Global</td><td>Every 4 yrs</td><td>Very High (event)</td></tr>
+          <tr><td>Olympics</td><td>Global</td><td>Every 2/4 yrs</td><td>High (event)</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- 12 Content -->
+      <section class="section" id="sec-content-comparison">
+        <div class="section-head"><div class="eyebrow">Content Strategy Comparison</div><h2>Formats by Company Type</h2></div>
+        <div class="table-wrap"><table><thead><tr><th>Type</th><th>Core formats</th><th>Monetisation fit</th></tr></thead><tbody>
+          <tr><td>Digital-only sports</td><td>Breaking, scores, previews/reports, listicles</td><td>Ads (AdSense/Ad Manager/direct)</td></tr>
+          <tr><td>Subscription sports</td><td>Long-form, analysis, exclusives</td><td>Subscription</td></tr>
+          <tr><td>Broadcasters</td><td>Live, highlights, studio</td><td>Rights + subscription + ads</td></tr>
+          <tr><td>General news w/ sports</td><td>News + sports desk</td><td>Display + circulation + subs</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- 13 Sponsorship -->
+      <section class="section" id="sec-sponsorship">
+        <div class="section-head"><div class="eyebrow">Sponsorship Analysis</div><h2>Commercial Partnerships</h2><p>Where prices are not public, methodology is explained — prices are not fabricated.</p></div>
+        <div class="card"><h3>Sample Sponsorship Package (new Bangladesh portal)</h3><div class="table-wrap"><table><thead><tr><th>Tier</th><th>Deliverables</th><th>Pricing method</th></tr></thead><tbody>
+          <tr><td>Bronze</td><td>Logo + 1 post + report</td><td>Flat monthly</td></tr>
+          <tr><td>Silver</td><td>+ article + newsletter</td><td>Flat monthly</td></tr>
+          <tr><td>Gold</td><td>+ video + event coverage</td><td>Flat + deliverables multiplier</td></tr>
+          <tr><td>Exclusive</td><td>Category exclusivity</td><td>Negotiated (CPM × reach × exclusivity)</td></tr>
+        </tbody></table></div><p class="xsmall muted mt8">Pricing = (reach/1000) × base CPM × deliverables multiplier × exclusivity. See main app sponsorship calculator.</p></div>
+      </section>
+
+      <!-- 14 Subscription -->
+      <section class="section" id="sec-subscription">
+        <div class="section-head"><div class="eyebrow">Subscription Models</div><h2>Who Charges &amp; How</h2></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>Subscription?</th><th>Notes</th></tr></thead><tbody id="subBody"></tbody></table></div>
+      </section>
+
+      <!-- 15 Streaming -->
+      <section class="section" id="sec-streaming">
+        <div class="section-head"><div class="eyebrow">Live Streaming Models</div><h2>Who Streams &amp; Rights</h2><p>Never restream without rights.</p></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>Streaming</th><th>Model</th></tr></thead><tbody id="streamBody"></tbody></table></div>
+      </section>
+
+      <!-- 16 Employees -->
+      <section class="section" id="sec-employees">
+        <div class="section-head"><div class="eyebrow">Employee Benchmarking</div><h2>Team Structure</h2><p>Employee counts are Unknown unless disclosed; structure is qualitative.</p></div>
+        <div class="grid c3">
+          <div class="card"><h4>Small (digital startup)</h4><ul class="muted small"><li>Founder, 1–2 writers, freelance dev</li><li>Outsource design/video</li></ul></div>
+          <div class="card"><h4>Medium</h4><ul class="muted small"><li>Editor, journalists, social, video, ad sales</li></ul></div>
+          <div class="card"><h4>Large (broadcaster)</h4><ul class="muted small"><li>Multi-department, correspondents, legal, finance</li></ul></div>
+        </div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div>Exact salaries/counts are not invented. Validate locally; use the employee cost calculator in the main business app.</div></div>
+      </section>
+
+      <!-- 17 Ownership -->
+      <section class="section" id="sec-ownership">
+        <div class="section-head"><div class="eyebrow">Ownership &amp; Acquisition</div><h2>Who Owns Whom</h2></div>
+        <div class="table-wrap"><table><thead><tr><th>Brand</th><th>Parent / Owner</th><th>Notes</th></tr></thead><tbody id="ownBody"></tbody></table></div>
+        <div class="notice warn mt12"><span class="n-ico">⚠️</span><div>Never attribute parent-company financial results to a single website (e.g., Cricbuzz → Times Internet; The Athletic → NYT).</div></div>
+      </section>
+
+      <!-- 18 Success/Failure -->
+      <section class="section" id="sec-success-failure">
+        <div class="section-head"><div class="eyebrow">Success &amp; Failure Analysis</div><h2>Lessons</h2></div>
+        <div class="grid c2">
+          <div class="card"><h3>✅ Success patterns</h3><ul class="muted small"><li>Owned audience (newsletter/community) reduces platform risk</li><li>Diversified revenue (ads + subs + sponsors)</li><li>Strong SEO + brand trust</li><li>Disciplined costs vs revenue</li></ul></div>
+          <div class="card"><h3>⚠️ Failure patterns</h3><ul class="muted small"><li>Over-reliance on one platform (Google/Facebook)</li><li>AdSense-only with low RPM</li><li>Costs outpacing revenue</li><li>Rights/copyright missteps</li></ul></div>
+        </div>
+      </section>
+
+      <!-- 19 Scorecard -->
+      <section class="section" id="sec-scorecard">
+        <div class="section-head"><div class="eyebrow">Competitor Scorecard</div><h2>Top 20 (Analyst Judgment)</h2><p id="scoreNote"></p></div>
+        <div class="grid c2">
+          <div class="card"><div class="table-wrap"><table><thead><tr><th>#</th><th>Company</th><th>Category</th><th class="num">Score</th></tr></thead><tbody id="scoreBody"></tbody></table></div></div>
+          <div class="card"><div class="chart-box tall"><canvas id="chartScore"></canvas></div></div>
+        </div>
+      </section>
+
+      <!-- 20 Revenue model comparison -->
+      <section class="section" id="sec-revenue-model-comparison">
+        <div class="section-head"><div class="eyebrow">Revenue Model Comparison</div><h2>Who Uses What</h2><p>● = observable model presence. Not financial magnitude.</p></div>
+        <div id="modelMatrix"></div>
+        <div class="grid c2 mt16">
+          <div class="card"><h3>Model Distribution</h3><div class="chart-box"><canvas id="chartModel"></canvas></div></div>
+          <div class="card"><h3>Ranked Lists (analyst)</h3><p class="xsmall muted" id="rankNote"></p>
+            <div class="grid c2"><div><h4>Top sports</h4><ol class="small muted" id="rankSports"></ol></div><div><h4>Subscription</h4><ol class="small muted" id="rankSubs"></ol></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 21 Bangladesh -->
+      <section class="section" id="sec-bangladesh-opportunities">
+        <div class="section-head"><div class="eyebrow">Bangladesh Market Opportunities</div><h2>Where a New Player Can Win</h2></div>
+        <div class="grid c2">
+          <div class="card"><h3>Study closely</h3><ul class="muted small"><li>Cricbuzz (scores + SEO), Prothom Alo / The Daily Star (local trust), ESPNcricinfo (data moat)</li></ul></div>
+          <div class="card"><h3>Avoid head-on</h3><ul class="muted small"><li>Broadcasting rights (capital-heavy), global football scale (Goal/OneFootball)</li></ul></div>
+          <div class="card"><h3>Niche opportunities</h3><ul class="muted small"><li>Bangladesh local sports, women's sports, grassroots/academies, Bangla-language analysis</li></ul></div>
+          <div class="card"><h3>Language &amp; geo</h3><ul class="muted small"><li>Bangla-first + English for international; Bangladesh core, then South Asia</li></ul></div>
+        </div>
+      </section>
+
+      <!-- 22 Startup recommendations -->
+      <section class="section" id="sec-startup-recommendations">
+        <div class="section-head"><div class="eyebrow">Startup Strategy Recommendations</div><h2>15 Practical Answers</h2></div>
+        <div class="card"><ol class="muted small" id="startupList"></ol></div>
+      </section>
+
+      <!-- 23 Financial benchmarking -->
+      <section class="section" id="sec-financial-benchmarking">
+        <div class="section-head"><div class="eyebrow">Financial Benchmarking</div><h2>Comparability Rules</h2></div>
+        <div class="card"><ul class="muted small"><li>Compare like-for-like periods and currencies; note inflation adjustment where reliable.</li><li>Never mix parent and subsidiary figures.</li><li>Distinguish gross vs net revenue; advertising vs AdSense.</li><li>Blank = Unknown; estimates go in a separate labeled section only.</li></ul></div>
+        <div class="notice info mt12"><span class="n-ico">ℹ️</span><div>Enter sourced data in the 10-Year Financial Analysis; metrics compute automatically with formulas shown.</div></div>
+      </section>
+
+      <!-- 24 Sources -->
+      <section class="section" id="sec-sources">
+        <div class="section-head"><div class="eyebrow">Research Sources &amp; Data Quality</div><h2>Citations &amp; Integrity</h2></div>
+        <div class="grid c2">
+          <div class="card"><h3>Source tiers</h3><ul class="muted small"><li>Financial: annual reports, SEC, Companies House, stock disclosures, audited accounts, credit reports</li><li>Business: official sites, IR, media kits, press releases</li><li>Traffic: Similarweb, Semrush, Ahrefs, Google Trends (estimates)</li><li>Industry: Reuters Institute, WAN-IFRA, IAB, WARC, Deloitte, PwC</li></ul></div>
+          <div class="card"><h3>Data classes</h3><ul class="muted small"><li><span class="badge green">Confirmed</span> audited</li><li><span class="badge blue">Disclosed</span> public/observable</li><li><span class="badge gold">Estimate</span> third-party/modeled</li><li><span class="badge gray">Unknown</span> no reliable data</li></ul></div>
+        </div>
+        <div class="notice danger mt12"><span class="n-ico">⛔</span><div>No fabricated revenue, AdSense, traffic, employee, sponsorship or acquisition figures. Missing data stays Unknown. See <span class="mono">DATA_QUALITY_AND_LIMITATIONS.md</span>.</div></div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="assets/js/competitors.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/financial-analysis.js"></script>
+<script src="assets/js/comparison.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/seed.js"></script>
+</body>
+</html>
