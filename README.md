@@ -10,8 +10,11 @@ Built as a single-page business-intelligence dashboard with **HTML5, CSS3, vanil
 
 ## ✨ Features
 
-- **24 business sections** covering the full lifecycle: idea → validation → startup → growth → expansion → maturity → exit.
-- **Live financial calculators** — revenue, OpEx, P&L, break-even, ROI, runway, valuation (revenue/EBITDA/DCF/asset), cap-table dilution.
+- **32 business sections** covering the full lifecycle: idea → validation → startup → growth → expansion → maturity → exit, plus startup strategy, Google Trends/keyword research, content strategy, employee/HR management, marketing, broadcasting-rights register and a decision engine.
+- **Live financial calculators** — revenue, OpEx, P&L, break-even, ROI, runway, valuation (revenue/EBITDA/DCF/asset), cap-table dilution, **employee cost**, **AdSense (geo/device/category)**, **sponsorship pricing**, **cash flow**, **marketing budget**.
+- **Broadcasting-rights register** with auto status (Cleared / Review / Blocked).
+- **Decision engine** producing automated recommendations from your assumptions.
+- **Content-opportunity scoring** and **CSV export** of tables.
 - **Interactive charts** (Chart.js) that update instantly when assumptions change.
 - **18+ Mermaid flowcharts** for editorial, advertising, AdSense, sponsorship, streaming, subscription, financial, investor, profit, break-even, risk, expansion, acquisition and exit workflows.
 - **Editable assumptions** persisted in `localStorage`; BDT (৳) default with USD toggle and editable FX rate.
@@ -56,7 +59,8 @@ python3 -m http.server 8000
 │       ├── calculators.js             # Financial engine (revenue, P&L, break-even, ROI, valuation, cap table)
 │       ├── charts.js                  # Chart.js visualisations (live-updating)
 │       ├── flowcharts.js              # 18+ Mermaid workflow diagrams
-│       └── content.js                 # Dynamic tables, editable inputs, policy accordion, KPI/risk tables
+│       ├── content.js                 # Dynamic tables, editable inputs, policy accordion, KPI/risk tables
+│       └── extended.js                # Employee/HR, rights register, decision engine, AdSense/sponsorship/mktg calculators, CSV
 ├── BUSINESS_MODEL_DOCUMENTATION.md    # How the model works
 ├── FINANCIAL_ASSUMPTIONS.md           # Every assumption and formula
 ├── POLICIES_AND_COMPLIANCE.md         # Policy framework + legal context
