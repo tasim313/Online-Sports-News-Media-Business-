@@ -248,6 +248,8 @@
     paintDashboard();
     // dynamic content tables (adsense, forecast, policies values, exit)
     if (SB.content && SB.content.update) SB.content.update();
+    // extended calculators (employees, decision engine, etc.)
+    if (SB.extended && SB.extended.update) SB.extended.update();
     // notify charts
     if (SB.charts && SB.charts.update) SB.charts.update();
   }

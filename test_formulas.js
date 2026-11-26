@@ -48,6 +48,7 @@ load('assets/js/calculators.js');
 load('assets/js/charts.js');
 load('assets/js/flowcharts.js');
 load('assets/js/content.js');
+load('assets/js/extended.js');
 
 // fire DOMContentLoaded
 if (listeners['DOMContentLoaded']) listeners['DOMContentLoaded']();
@@ -67,6 +68,7 @@ try {
   SB.flows.renderFor('business-lifecycle');
   SB.calc.recalcAll();
   SB.refreshAll();
+  if (SB.extended && SB.extended.update) SB.extended.update();
 } catch (e) { renderOk = false; console.log('  RENDER ERROR: ' + e.message); }
 
 function approx(a,b,eps=1e-6){ return Math.abs(a-b) <= eps; }
